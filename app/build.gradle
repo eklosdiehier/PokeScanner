@@ -9,7 +9,7 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'io.fabric'
+//apply plugin: 'io.fabric'
 //This line should commented out if you aren't using fabric
 apply plugin: 'realm-android'
 
@@ -60,6 +60,12 @@ android {
         packagingOptions {
             exclude 'META-INF/rxjava.properties'
             exclude 'rx/Back'
+        }
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
         }
     }
 }
